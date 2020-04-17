@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>New Motivation</h2>
+<mat-dialog-content class="mat-typography">
+  <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input [(ngModel)]="motivation.title" name="title" type="text" required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea [(ngModel)]="motivation.description" name="description" required matInput> </textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Media Link</mat-label>
+        <input [(ngModel)]="motivation.mediaLink" name="mediaLink" type="text" required matInput>
+      </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Close</button>
+  <button class="admin-submit-button" mat-raised-button color="primary" [mat-dialog-close]="motivation" >Done</button>
+</mat-dialog-actions>

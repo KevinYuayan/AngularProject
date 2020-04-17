@@ -1,0 +1,56 @@
+<div class="body">
+  <h2>Toronto Hospital</h2>
+
+  <mat-card id="card" style="text-align: center;">
+    <mat-card-title>
+      Register
+    </mat-card-title>
+    <br />
+
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input [(ngModel)]="username" matInput minlength="6" /> </mat-form-field
+      ><br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          [(ngModel)]="password"
+          matInput
+          minlength="8"
+          type="password"
+        /> </mat-form-field
+      ><br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Fist Name</mat-label>
+        <input [(ngModel)]="firstname" matInput type="text" /> </mat-form-field
+      ><br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input [(ngModel)]="lastname" matInput type="text" /> </mat-form-field
+      ><br />
+
+      <mat-checkbox class="example-margin" [(ngModel)]="isNurse">
+        I'm a nurse </mat-checkbox
+      ><br /><br /><br />
+
+      <button
+        [disabled]="!validate()"
+        (click)="register()"
+        mat-raised-button
+        color="Primary"
+        style="margin-right: 5px;"
+      >
+        Register
+      </button>
+      <br />
+      <br />
+      <p (click)="navigate('../login')">
+        Already registered? <button mat-button>Login!</button>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

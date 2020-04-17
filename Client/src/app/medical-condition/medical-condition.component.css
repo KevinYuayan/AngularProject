@@ -1,0 +1,30 @@
+mat-form-field {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+mat-table {
+  margin: 5%;
+}
+.medicalDiv {
+  width: 100%;
+  height: 100%;
+  background-color: cadetblue;
+}
+.mat-elevation-z8 {
+  background-image: url(../../assets/hhh.png);
+  font-size: larger;
+}
+mat-header-cell {
+  color: aliceblue;
+  font-size: larger;
+}
+mat-cell {
+  color: black;
+  font-size: medium;
+  font-weight: bolder;
+}
+mat-option {
+  background-color: cadetblue;
+}

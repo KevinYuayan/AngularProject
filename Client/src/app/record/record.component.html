@@ -1,0 +1,48 @@
+<app-toolbar></app-toolbar>
+<div class="RecordTable">
+  <h2 style="text-align: center;">Record table</h2>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="heartRate">
+      <mat-header-cell *matHeaderCellDef> Pulse rate </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.heartRate }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="bloodPressure">
+      <mat-header-cell *matHeaderCellDef> Blood Pressure </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.bloodPressure }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.weight }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="bodyTemperature">
+      <mat-header-cell *matHeaderCellDef> Temperature </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.bodyTemperature }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="respiratoryRate">
+      <mat-header-cell *matHeaderCellDef> Respiratory Rate </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.respiratoryRate }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let element; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <ng-container *ngIf="isUser()">
+    <button class="add" mat-raised-button (click)="openDialogNew()">
+      <mat-icon>edit</mat-icon> New Record
+    </button>
+  </ng-container>
+</div>

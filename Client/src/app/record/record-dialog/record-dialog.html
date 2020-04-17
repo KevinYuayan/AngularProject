@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>New Record</h2>
+<mat-dialog-content class="mat-typography">
+      <mat-form-field appearance="outline">
+        <mat-label>Respiratory Rate</mat-label>
+        <input [(ngModel)]="record.respiratoryRate" name="respiratoryRate" type="number" required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Body temperature</mat-label>
+        <input [(ngModel)]="record.bodyTemperature" name="temperature" type="number" required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Weight</mat-label>
+        <input [(ngModel)]="record.weight" name="weight" type="number" required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Blood Pressure</mat-label>
+        <input [(ngModel)]="record.bloodPressure" name="bloodPressure" type="number" required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Pulse Rate</mat-label>
+        <input [(ngModel)]="record.heartRate" name="pulseRate" type="number" required matInput>
+      </mat-form-field>
+
+      <ng-container *ngIf="isNurse()">
+        <mat-form-field appearance="outline">
+          <mat-label>Patient</mat-label>
+          <mat-select [(ngModel)]="record.patient">
+            <mat-option *ngFor="let p of patients" [value]="p._id">
+              {{p.username}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="record" >Done</button>
+</mat-dialog-actions>

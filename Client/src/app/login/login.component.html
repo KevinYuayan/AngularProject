@@ -1,0 +1,40 @@
+<div class="body">
+  <!-- <mat-icon style="color: white;">local_hospital</mat-icon> -->
+  <br />
+  <h2>Toronto Hospital</h2>
+
+  <mat-card id="card" style="text-align: center;" class="loginForm">
+    <mat-card-title>
+      Login
+    </mat-card-title>
+    <br />
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input [(ngModel)]="username" matInput /> </mat-form-field
+      ><br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input [(ngModel)]="password" matInput type="password" />
+
+        <br /> </mat-form-field
+      ><br />
+      <button
+        [disabled]="!validate()"
+        (click)="login()"
+        mat-raised-button
+        color="primary"
+        style="margin-right: 5px;"
+      >
+        Login
+      </button>
+
+      <br />
+      <br />
+      <p (click)="navigate('../register')">
+        <button mat-button>Register!</button>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

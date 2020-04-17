@@ -1,0 +1,30 @@
+<app-toolbar></app-toolbar>
+<div class="medicalDiv">
+  <h2 style="text-align: center;">Elaborate your medical condition</h2>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select symptoms</mat-label>
+    <mat-select placeholder="Symptoms" [(value)]="symptomsSelected" multiple>
+      <mat-option *ngFor="let sym of symptomsFull" [value]="sym">{{
+        sym.title
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.title }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.description }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let element; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

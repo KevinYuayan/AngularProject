@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <button mat-button style="color: white;">
+    Toronto Hospital
+  </button>
+  <span class="example-spacer"></span>
+  <button (click)="navigate('../motivation')" mat-button>Motivation</button>
+  <button (click)="navigate('../record')" mat-button>Record</button>
+  <button (click)="navigate('../medCal')" mat-button>Med. Condition</button>
+
+  <button (click)="navigate('../create-alert')" mat-button>
+    <ng-container *ngIf="isPatient()">
+      <mat-icon>add_alert</mat-icon> My Alerts
+    </ng-container>
+    <ng-container *ngIf="!isPatient()">
+      <mat-icon>add_alert</mat-icon> All Alerts
+    </ng-container>
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>Account
+  </button>
+  <mat-menu #menu="matMenu">
+    <p style="text-align: center;">Role: {{ getRole() }}</p>
+
+    <button (click)="logout()" mat-button>
+      <mat-icon>exit_to_app</mat-icon> Log-out
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<br />

@@ -1,0 +1,32 @@
+<app-toolbar></app-toolbar>
+<div class="MotivationTable">
+  <h2 style="text-align: center;">Motivation table</h2>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.title }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.description }} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="mediaLink">
+      <mat-header-cell *matHeaderCellDef> Media Link </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.mediaLink }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let element; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <ng-container *ngIf="isNurse()">
+    <button class="add" mat-raised-button (click)="openDialogNew()">
+      <mat-icon>edit</mat-icon> New Motivation
+    </button>
+  </ng-container>
+</div>
