@@ -18,7 +18,7 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="mediaLink">
       <mat-header-cell *matHeaderCellDef> Media Link </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.mediaLink }} </mat-cell>
+      <mat-cell *matCellDef="let element"> <a href=" {{ element.mediaLink }} ">{{ element.mediaLink }}</a> </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
