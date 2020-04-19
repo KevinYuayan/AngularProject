@@ -1,0 +1,26 @@
+[
+  {
+    "temperature": 39,
+    "heart_rate": 130,
+    "weight": 95,
+    "respiratory_rate": 23,
+    "height": 180,
+    "healthy": 0
+  },
+  {
+    "temperature": 37,
+    "heart_rate": 90,
+    "weight": 55,
+    "respiratory_rate": 15,
+    "height": 180,
+    "healthy": 1
+  },
+  {
+    "temperature": 34.5,
+    "heart_rate": 40,
+    "weight": 41,
+    "respiratory_rate": 9,
+    "height": 180.5,
+    "healthy": 0
+  }
+]
